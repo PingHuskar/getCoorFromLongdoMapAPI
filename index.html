@@ -5,20 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style/longdo.css">
     <script src="https://api.longdo.com/map/?key="></script>
     <script src="script.js"></script>
 </head>
 <body onload="init();">
     <div id="map" onclick="getCoor();"></div>
-    <div class="coorInput">
-        <form>
-            <div class="box">
-                <input type="text" id="lat" placeholder="Latitude" disabled>
-                <input type="text" id="long" placeholder="Longitude" disabled>
-                <button type="reset">RESET</button>
-            </div>
-        </form>
+    <div id="container">
+        <div class="mt-5"><h1>Current Map : <span id="currentMapId" class="text-3xl">map1</span></h1></div>
+        <div class="coorInput">
+            <form>
+                <div class="box" id="coorBox">
+                </div>
+            </form>
+        </div>
     </div>
+    <script src="script2.js"></script>
 </body>
 </html>
