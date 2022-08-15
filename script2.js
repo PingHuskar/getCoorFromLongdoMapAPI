@@ -1,7 +1,6 @@
 const searchParam = new URLSearchParams(location.search)
-var nMap = parseInt(searchParam.get('nMap')) || 2
+var nMap = parseInt(searchParam.get('nMap')) || 1
 const coorBox = document.getElementById('coorBox')
-coorBox.innerHTML = "<br>"
 for (var i = 1; i<nMap+1;i++) {
   document.getElementById('coorBox').innerHTML += `<div>
   <label for="lat${i}">Latitude${i}</label>
@@ -13,4 +12,4 @@ for (var i = 1; i<nMap+1;i++) {
   </div>`
 }
 document.getElementById('coorBox').innerHTML += `<div><button class="cursor-pointer bg-green-500" type="submit">Submit</button>
-<button class="bg-red-700" type="reset">RESET</button></div>`
+<button onclick="removeMarker();" class="bg-red-700" type="reset">RESET</button></div>`

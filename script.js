@@ -42,22 +42,10 @@ function init() {
     console.log(`Mark map${Id} on ${mouseLocation.lat},${mouseLocation.lon}`)
     document.getElementById(`lat${Id}`).value = mouseLocation.lat
     document.getElementById(`long${Id}`).value = mouseLocation.lon
+    removeMarker();
     var markerTemp = new longdo.Marker(mouseLocation)
     map.Overlays.add(markerTemp);
-    setTimeout(function() {
-      map.Overlays.remove(markerTemp)}
-      , 5000) //milliseconds 
   });
-  // map.Event.bind('drag', function(event) {
-  //   xsum += event.x;
-  //   ysum += event.y;
-  //   console.log('x: ' + xsum + ' y: ' + ysum)
-  // });
-  
-  // map.Event.bind('drop', function() {
-  //   ysum = 0;
-  //   xsum = 0;
-  // });
 }
 
 const getCoor = async () => {
@@ -73,6 +61,10 @@ const getCoor = async () => {
       // document.getElementById(`long${Id}`).value = map.location().lon
     // }
     marker.move({lat:map.location().lat, lon:map.location().lon}, true);
+}
+
+const removeMarker = () => {
+  map.Overlays.clear();
 }
 
 const ResetCoorId = (i) => {
